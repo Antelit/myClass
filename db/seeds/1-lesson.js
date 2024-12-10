@@ -1,3 +1,10 @@
+const randomDate = () => {
+    const year = Math.floor(Math.random() * (2025 - 2020 + 1) + 2020);
+    const month = Math.floor(Math.random() * (11 - 0 + 1) + 0);
+    const day = Math.floor(Math.random() * (28 - 1 + 1) + 0);
+    return new Date(year, month, day);
+};
+
 module.exports = {
     async up(queryInterface) {
         const items = [
@@ -41,11 +48,4 @@ module.exports = {
      * await queryInterface.bulkDelete('People', null, {});
      */
     },
-};
-
-const randomDate = () => {
-    const y = Math.floor(Math.random() * (2025 - 2020 + 1) + 2020);
-    const m = Math.floor(Math.random() * (11 - 0 + 1) + 0);
-    const d = Math.floor(Math.random() * (28 - 1 + 1) + 0);
-    return new Date(y, m, d)
 };

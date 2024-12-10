@@ -5,7 +5,7 @@ module.exports = {
         public: 'public',
     },
 
-    options(Model) {
+    options() {
         return {
             paranoid: false,
             timestamps: false,

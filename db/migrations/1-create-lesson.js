@@ -10,5 +10,4 @@ module.exports = {
             status: { type: DataTypes.INTEGER },
         });
     },
-    async down(queryInterface) {},
 };

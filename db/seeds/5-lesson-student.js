@@ -1,4 +1,3 @@
-
 module.exports = {
     async up(queryInterface) {
         const LessonRows = await queryInterface.sequelize.query(
@@ -17,8 +16,18 @@ module.exports = {
             const { id: lesson_id } = LessonRows[Math.floor(Math.random() * LessonRows.length)];
             const { id: student_id } = StudentRows[Math.floor(Math.random() * StudentRows.length)];
 
-            lessonStudents.push({ lesson_id, student_id, visit: Math.random() > 0.5 ? true : false });
+            const checkEx = lessonStudents
+                .find((el) => el.lesson_id === lesson_id && el.student_id === student_id);
+
+            if (!checkEx) {
+                lessonStudents.push({
+                    lesson_id,
+                    student_id,
+                    visit: Math.random() > 0.5,
+                });
+            }
         }
+        console.log({ lessonStudents: lessonStudents.length });
 
         return queryInterface.bulkInsert(
             { tableName: 'lesson_students', schema: 'public' },

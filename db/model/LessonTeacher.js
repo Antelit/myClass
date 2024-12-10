@@ -1,6 +1,5 @@
 const { DataTypes, Model } = require('sequelize');
 const defaults = require('../defaults');
-const { Teacher } = require('./Teacher');
 
 const MODEL_NAME = 'LessonTeacher';
 

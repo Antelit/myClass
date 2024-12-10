@@ -8,5 +8,4 @@ module.exports = {
             name: { type: DataTypes.TEXT },
         });
     },
-    async down(queryInterface) {},
 };
