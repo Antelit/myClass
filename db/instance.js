@@ -3,6 +3,7 @@ const config = require('./config');
 
 const sequelize = new Sequelize({
     ...config.development,
+    logging: false,
     dialectOptions: {
         application_name: 'APP BACK',
     },
